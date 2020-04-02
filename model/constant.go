@@ -1,8 +1,11 @@
 package model
 
 
-const (
-	Domain_wallet_ws = "localhost:7638"
+var (
+	Wallet_API_Port = ""
+	Wallet_WS_Port = ""
+	Domain_Wallet_WS = "localhost:" + Wallet_WS_Port
+
 )
 
 const (

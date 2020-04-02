@@ -61,7 +61,7 @@ func (sw *Ws_showWallet) NotifyPaymentRequest(req *model.ApiPaymentRequestReq, r
 	}
 
 
-	u := url.URL{Scheme:"ws", Host:model.Domain_wallet_ws, Path:"/ws"}
+	u := url.URL{Scheme:"ws", Host:model.Domain_Wallet_WS, Path:"/ws"}
 	fmt.Println("connecting to :", u.String())
 
 	c, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
