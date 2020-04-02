@@ -85,7 +85,7 @@ func WsHandler(w http.ResponseWriter, r *http.Request) {
 						continue
 					}
 					break
-				case model.WS_API_NOTIFY:
+				case model.WS_API_NOTIFY_TO_WALLET:
 					NotifyPRToWallet(conn, wsItemMap, wsData.D.(string))
 					break
 				case model.WS_DISCONNECT:

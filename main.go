@@ -23,6 +23,7 @@ func init() {
 func startWS() {
 	http.HandleFunc("/ws", walletWS.WsHandler)
 	fmt.Println("Start showWallet-WS-Service...")
+	fmt.Println(util.AddStr("Listen: ws://:", model.Wallet_WS_Port, "/ws"))
 	err := http.ListenAndServe(util.AddStr(":", model.Wallet_WS_Port), nil)
 	if err != nil {
 		panic(err)
