@@ -21,7 +21,9 @@ func init() {
 
 func StartAPI() {
 	r := mux.NewRouter()
-	r.HandleFunc("/api/v1/wallet/notifyPaymentRequest", NotifyPaymentRequest).Methods("POST")
+	r.HandleFunc("/api/v1/wallet/notifyPaymentRequest", NotifyPaymentRequest).
+		Methods("POST").
+		Headers("Content-Type", "application/bitcoinsv-payment", "Accept", "application/bitcoinsv-paymentack")
 	fmt.Println("Start showWallet-API-Service...")
 	fmt.Println(util.AddStr("Listen: http://:", model.Wallet_API_Port))
 	err := http.ListenAndServe(util.AddStr(":", model.Wallet_API_Port), r)
